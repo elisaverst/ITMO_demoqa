@@ -1,20 +1,11 @@
-from selenium.common.exceptions import NoSuchElementException
 from pages.base_page import BasePage
+from components.components import WebElement
 
 class DemoQA(BasePage):
 
-    def exist_icon(self):
-        try:
-            self.find_element(locator='//*[@id="root"]/header/a')
-        except NoSuchElementException:
-            return False
-        return True
+    def __init__(self, driver):
+        self.base_url = 'https://demoqa.com/'
+        super().__init__(driver, self.base_url)
 
-    def click_on_the_icon(self):
-        self.find_element(locator='//*[@id="root"]/header/a').click()
-
-    def equal_url(self):
-        if self.get_url() == 'https://demoqa.com/':
-            return True
-        else:
-            return False
+        self.icon = WebElement(driver, '//*[@id="root"]/header/a')
+        self.button_elements = WebElement(driver, '//*[@id="root"]/div/div/div[2]/div/a[1]/div/div')
