@@ -12,9 +12,14 @@ class WebElement:
     def find_element(self):
         return self.driver.find_element(By.XPATH, self.locator)
 
+    #  метод получения текста
+    def get_text(self):
+        return str(self.find_element().text)
+
     def exist(self):
         try:
             self.find_element()
         except NoSuchElementException:
             return False
         return True
+    
