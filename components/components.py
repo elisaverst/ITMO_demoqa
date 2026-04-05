@@ -22,4 +22,6 @@ class WebElement:
         except NoSuchElementException:
             return False
         return True
-    
+
+    def visible(self):
+        return self.find_element().is_displayed()

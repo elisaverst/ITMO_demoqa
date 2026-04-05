@@ -22,3 +22,11 @@ def test_check_text(browser):
     assert elements_page.equal_url()
     assert elements_page.text.get_text() == 'Please select an item from left to start practice.'
 
+def test_page_elements(browser):
+    elements_page = ElementsPage(browser)
+
+    elements_page.visit()
+
+    assert elements_page.icon.exist()
+    assert elements_page.button_sidebar_first.exist()
+    assert elements_page.button_sidebar_first_textbox.exist()
