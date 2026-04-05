@@ -12,3 +12,4 @@ class ElementsPage(BasePage):
         self.button_sidebar_first = WebElement(driver, '//*[@id="root"]/div/div/div/div[1]/div/div/div[1]/span')
         self.button_sidebar_first_textbox = WebElement(driver, '//*[@id="item-0"]')
         self.button_sidebar_first_checkbox = WebElement(driver, '//*[@id="item-1"]')
+        self.button_first_menu = WebElement(driver, '/html/body/div/div/div/div/div[1]/div/div/div[1]/div/ul/li')

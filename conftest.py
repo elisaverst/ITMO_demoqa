@@ -6,4 +6,5 @@ def browser():
     driver = webdriver.Chrome()
     driver.get('https://demoqa.com/')
     yield driver
+    driver.set_window_size(1000, 1000)
     driver.quit()

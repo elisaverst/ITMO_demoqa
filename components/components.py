@@ -12,6 +12,9 @@ class WebElement:
     def find_element(self):
         return self.driver.find_element(By.XPATH, self.locator)
 
+    def find_elements(self):
+        return self.driver.find_elements(By.XPATH, self.locator)
+
     #  метод получения текста
     def get_text(self):
         return str(self.find_element().text)
@@ -25,3 +28,11 @@ class WebElement:
 
     def visible(self):
         return self.find_element().is_displayed()
+
+    def check_count_elements(self, count:  int) -> bool:
+        if len(self.find_elements()) == count:
+            return True
+        return False
+
+    def send_keys(self, text: str):
+        self.find_element().send_keys(text)
