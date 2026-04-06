@@ -17,3 +17,6 @@ class FormPage(BasePage):
         self.button_submit = WebElement(driver, '//*[@id="submit"]')
         self.modal_dialog = WebElement(driver, '/html/body/div[3]/div/div')
         self.button_close_modal = WebElement(driver, '//*[@id="closeLargeModal"]')
+
+        self.hobbies = WebElement(driver, '//*[@id="hobbies-checkbox-1"]')
+        self.current_address = WebElement(driver, '//*[@id="currentAddress"]')
