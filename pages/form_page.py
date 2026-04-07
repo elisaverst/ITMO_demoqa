@@ -20,3 +20,4 @@ class FormPage(BasePage):
 
         self.hobbies = WebElement(driver, '//*[@id="hobbies-checkbox-1"]')
         self.current_address = WebElement(driver, '//*[@id="currentAddress"]')
+        self.user_form = WebElement(driver, '//*[@id="userForm"]')
