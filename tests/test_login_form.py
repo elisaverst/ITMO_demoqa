@@ -18,6 +18,12 @@ def test_login_form(browser):
     form_page.current_address.send_keys('Road No. 1, Near GVK One Mall')
     time.sleep(2)
 
+    form_page.button_state.scroll_to_element()
+    time.sleep(2)
+    form_page.button_state.click()
+    form_page.button_NCR.click()
+    time.sleep(2)
+
     form_page.button_submit.click_force()
     time.sleep(2)
 
