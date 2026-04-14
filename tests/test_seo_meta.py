@@ -6,16 +6,12 @@ from pages.alerts import Alerts
 from pages.browser_tab import BrowserTab
 import pytest
 
-def test_check_title_deno(browser):
-    demo_qa_page = DemoQA(browser)
-
-    demo_qa_page.visit()
-
-    assert browser.title == 'demosite'
-
 @pytest.mark.parametrize('pages', [AccordianPage, Alerts, DemoQA, BrowserTab])
 def test_check_title_all_pages(browser, pages):
     page = pages(browser)
     page.visit()
     time.sleep(2)
-    assert page.get_title() == 'demosite'
+
+    assert page.viewport.exist()
+    assert page.viewport.get_dom_attribute('name') == 'viewport'
+    assert page.viewport.get_dom_attribute('content') == 'width=device-width, initial-scale=1'
