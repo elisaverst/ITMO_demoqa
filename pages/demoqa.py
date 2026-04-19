@@ -9,4 +9,6 @@ class DemoQA(BasePage):
 
         self.icon = WebElement(driver, '//*[@id="root"]/header/a')
         self.button_elements = WebElement(driver, '//*[@id="root"]/div/div/div[2]/div/a[1]/div/div')
-        self.footer = WebElement(driver, '//*[@id="root"]/footer/span')  # подвал страницы
+        self.footer = WebElement(driver, '//*[@id="root"]/footer/span')
+
+        self.h5 = WebElement(driver, 'div.card h5')
